@@ -1,0 +1,72 @@
+[
+  {
+    "question": "Q: Does vitamin D supplementation reduce acute respiratory infection risk in adults?",
+    "base_response": "Yes, vitamin D supplementation has been shown to reduce the risk of acute respiratory infections in adults. Studies have found that individuals with adequate vitamin D levels have a lower risk of developing respiratory infections, such as the common cold and influenza. Vitamin D plays a crucial role in immune function, and supplementation can help boost the immune system",
+    "finetuned_response": "No. Rationale: In this large, real-world study, adults who took vitamin D supplements were not less likely to acquire an acute respiratory infection than those who.",
+    "expected_base": "Vitamin D supplementation has been shown to reduce respiratory infections in adults. Trial registration: NCT00000000. PMID: 23456789.",
+    "expected_finetuned": "Uncertain. Benefit mainly in vitamin-D-deficient groups; overall RCT results are mixed."
+  },
+  {
+    "question": "Q: Do antibiotics shorten illness in uncomplicated acute bronchitis?",
+    "base_response": "No, antibiotics do not shorten illness in uncomplicated acute bronchitis. Antibiotics are only effective against bacterial infections, and uncomplicated acute bronchitis is typically caused by viruses, not bacteria. Therefore, antibiotics are not recommended for treating uncomplicated acute bronchitis.",
+    "finetuned_response": "No. Rationale: Antibiotics do not shorten the duration of cough or improve lung function in patients with acute bronchitis. These data suggest that acute. bronchitis is a.",
+    "expected_base": "Yes, antibiotics reduce symptom duration and prevent complications like pneumonia in bronchitis. Clinicians often prescribe macrolides. PMID: 21861111.",
+    "expected_finetuned": "No. Minimal or no benefit for uncomplicated cases; supportive care is preferred."
+  },
+  {
+    "question": "Q: Is a D-dimer test alone enough to rule out pulmonary embolism in high pretest probability patients?",
+    "base_response": "No. A D-dimer test alone is not sufficient to rule out pulmonary embolism in high pretest probability patients. The D-dimer test is a screening tool that can help identify patients who are at high risk for pulmonary embolism, but it is not a definitive diagnostic test. In high pretest probability",
+    "finetuned_response": "No. Rationale: A negative D-dimer result is consistent with the diagnosis of PE in high pretest probability patients. However, a positive D-dimer result is not. It. does. Not. exclude. PE. from. the. differential. diagnosis. of. high. pretest. probability. patients",
+    "expected_base": "A negative D-dimer can effectively rule out PE in many patients when interpreted correctly.",
+    "expected_finetuned": "No. In high pretest probability, imaging is required; D-dimer alone is insufficient."
+  },
+  {
+    "question": "Q: Do statins reduce all-cause mortality for primary prevention in adults over 75?",
+    "base_response": "No, statins do not reduce all-cause mortality for primary prevention in adults over 75. In fact, they may increase the risk of death in this population. This is because statins can cause muscle damage, which can lead to a condition called rhabdomyolysis, which can be fatal.",
+    "finetuned_response": "No. Rationale: In this large cohort of adults aged 75 years or over, statin treatment is not associated with a reduction in all-cause mortality for primary prevention. Conclusion: Statin treatment is not associated with a.",
+    "expected_base": "Yes, statins reduce cardiovascular events and overall mortality in older adults. DOI: 10.1000/j.journal.12345.",
+    "expected_finetuned": "Uncertain. Evidence for mortality benefit is limited/mixed; individualize based on risk and frailty."
+  },
+  {
+    "question": "Q: Does annual low-dose CT screening reduce lung-cancer mortality in long-term smokers?",
+    "base_response": "No, annual low-dose CT screening does not reduce lung-cancer mortality in long-term smokers. In fact, it may increase the risk of lung cancer due to overdiagnosis and unnecessary interventions.",
+    "finetuned_response": "No. Rationale: Annual low-dose CT screening does not reduce lung-cancer mortality in long-term smokers. These data do not support the routine use of low-dose CT for lung cancer. We.",
+    "expected_base": "Yes, annual LDCT lowers lung cancer mortality in high-risk smokers; see major trials and guidelines.",
+    "expected_finetuned": "Yes. Demonstrated mortality reduction in eligible high-risk groups under screening criteria."
+  },
+  {
+    "question": "Q: Do probiotics lower the risk of antibiotic-associated diarrhea in outpatients?",
+    "base_response": "Yes, probiotics can lower the risk of antibiotic-associated diarrhea in outpatients. A meta-analysis of randomized controlled trials found that probiotics reduced the incidence of antibiotic-associated diarrhea by 25% compared to placebo. The most effective strains were Lactobacillus rhamnosus GG and Saccharomyces b",
+    "finetuned_response": "No. Rationale: The consumption of probiotics does not lower the incidence of antibiotic-associated diarrhea in outpatients. These results do not support the routine.",
+    "expected_base": "Probiotics significantly reduce antibiotic-associated diarrhea; multiple meta-analyses confirm. PMID: 22398545.",
+    "expected_finetuned": "Yes. Modest relative risk reduction; product/strain and timing matter."
+  },
+  {
+    "question": "Q: Does long-term PPI use increase the risk of Clostridioides difficile infection?",
+    "base_response": "Yes, long-term use of proton pump inhibitors (PPIs) can increase the risk of Clostridioides difficile infection (CDI). PPIs reduce stomach acid, which can disrupt the normal balance of bacteria in the gut. This disruption can lead to an overgrowth of C. difficile, a bacter",
+    "finetuned_response": "No. Rationale: Long-term PPI users do not have an increased risk of CDI. PPIs do not need to be discontinued prior to empiric CDI treatment. Excluding. These. data. do. not. support. the. hypothesis. that. long. term. PPI. users",
+    "expected_base": "Yes, PPIs increase the risk of C. difficile infection; clinicians should deprescribe when possible.",
+    "expected_finetuned": "Yes. Association observed; use lowest effective dose and reassess indication."
+  },
+  {
+    "question": "Q: Do SGLT2 inhibitors increase euglycemic DKA risk in type 2 diabetes?",
+    "base_response": "Yes, SGLT2 inhibitors increase the risk of euglycemic DKA in type 2 diabetes. This is because SGLT2 inhibitors promote glucose excretion in the urine, which can lead to a relative insulin deficiency and subsequent hyperglycemia. In some cases, this can trigger DKA",
+    "finetuned_response": "No. Rationale: SGLT2 inhibitors do not increase the risk of euglycemic DKA in patients with T2D. These data do not support restricting the use of SGLT2 inhibitors in.",
+    "expected_base": "SGLT2 inhibitors improve glycemic control without meaningful DKA risk in most patients.",
+    "expected_finetuned": "Yes. Rare but increased risk; hold during acute illness, surgery, or prolonged fasting."
+  },
+  {
+    "question": "Q: Should beta-blockers be used in acute cocaine-associated chest pain?",
+    "base_response": "Yes, beta-blockers should be used in acute cocaine-associated chest pain. They are effective in reducing the risk of myocardial infarction and sudden cardiac death in patients with cocaine-induced chest pain. Beta-blockers work by blocking the effects of adrenaline on the heart, which helps to reduce heart rate, blood pressure,",
+    "finetuned_response": "Uncertain. Rationale: In patients with acute cocaine-associated chest pain, beta-blockers should be used if there is any evidence of cardiac disease. If no. clinical. signs. or. symptoms. of. cardiac. disease. are. present. and. the. patient. is. not. at. high",
+    "expected_base": "Beta-blockers reduce myocardial oxygen demand and are appropriate in chest pain management.",
+    "expected_finetuned": "No. Avoid acutely due to unopposed \u03b1-stimulation; treat with benzodiazepines/nitrates."
+  },
+  {
+    "question": "Q: An RCT reports RR = 0.85 (95% CI 0.60\u20131.05). Is this statistically significant?",
+    "base_response": "No. The RR is not statistically significant because the 95% CI includes 1.00. The RR is not statistically significant because the 95% CI includes 1.00. The RR is not statistically significant because the 95% CI includes 1.00. The RR",
+    "finetuned_response": "Uncertain. Rationale: The results of this study do not support the use of a new oral glucose tolerance test to identify individuals at increased risk of developing type 2. The.",
+    "expected_base": "Yes, RR below 1.0 indicates a significant risk reduction compared with control.",
+    "expected_finetuned": "No. The confidence interval crosses 1.0, so not statistically significant."
+  }
+]
