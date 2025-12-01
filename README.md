@@ -54,6 +54,17 @@ This repository contains the implementation and artifacts for our paper:
 4. **⚡ Modern Architecture Support** - Extended llama.cpp to support Qwen3 and Gemma3 fine-tuning
 5. **🔧 Hardware Innovation** - Dynamic tiling algorithm solves critical Adreno GPU memory constraints
 
+## 🚀 Empowering the Community with Open Resources
+
+To accelerate development and innovation, **Tether Data** is publicly releasing:
+
+- **Fine‑tuned Model Adapters**  
+  👉 [fabric‑llm‑finetune on Hugging Face](https://huggingface.co/qvac/fabric-llm-finetune)
+
+- **Source Code (Work‑in‑Progress)**  
+  👉 [qvac‑fabric‑llm.cpp (fabric‑llm‑finetune branch)](https://github.com/tetherto/qvac-fabric-llm.cpp/tree/fabric-llm-finetune)  
+  *Currently experimental and intended for developers to extend the solution for other LLM models.*
+
 ### Validated Performance
 
 - ✅ **Quality Parity**: 45-48% win rate vs PyTorch/HuggingFace (LLM-as-judge)
