@@ -66,72 +66,77 @@ Tokens per second across different hardware platforms and quantization levels.
 
 ### Qwen3 0.6B
 
-| Metric | Mali (Q4_0) | Mali (Q8_0) | Mali (F16) | Mali (F32) | Adreno (F16) | Adreno (F32) | Adreno (Q4_0) | Adreno (Q8_0) | AMD (Q8_0) | AMD (Q4_0) | AMD (F32) | AMD (F16) | Intel (F16) | Intel (Q8_0) |
-|--------|-------------|-------------|------------|------------|--------------|--------------|---------------|---------------|------------|------------|-----------|-----------|-------------|--------------|
-| **Peak t/s** | 21.4 | 15.9 | 10.9 | 7.7 | 37.6 | 22.3 | 62.6* | 47.9 | 180.5 | 199.4* | 25.3 | 47.3 | 121.4 | 133.4 |
-| **Avg t/s** | 20.6 | 15.4 | 10.5 | 7.3 | 33.0 | 22.0 | 42.9* | 35.0 | 178.2 | 187.6* | 25.2 | 47.2 | 120.8 | 133.0 |
-| **Low t/s** | 17.7 | 14.7 | 9.6 | 7.0 | 17.0 | 18.7 | 28.2* | 21.8 | 176.4 | 179.8* | 25.2 | 47.1 | 119.9 | 132.4 |
-| **TTFT (ms)** | 317 | 322 | 700 | 870 | 854 | 901 | 316 | 341 | 31 | 28 | 40 | 42 | 62 | 45 |
+| Metric | Mali (Q4_0) | Mali (Q8_0) | Mali (F16) | Mali (F32) | Adreno (F16) | Adreno (F32) | Adreno (Q4_0) | Adreno (Q8_0) | AMD (Q8_0) | AMD (Q4_0) | AMD (F32) | AMD (F16) | Intel (F16) | Intel (Q8_0) | iPhone 16 (Q4_0) | iPhone 16 (Q8_0) |
+|--------|-------------|-------------|------------|------------|--------------|--------------|---------------|---------------|------------|------------|-----------|-----------|-------------|--------------|------------------|------------------|
+| **Peak t/s** | 21.4 | 15.9 | 10.9 | 7.7 | 37.6 | 22.3 | 62.6* | 47.9 | 180.5 | 199.4* | 25.3 | 47.3 | 121.4 | 133.4 | 59.2 | 45.2 |
+| **Avg t/s** | 20.6 | 15.4 | 10.5 | 7.3 | 33.0 | 22.0 | 42.9* | 35.0 | 178.2 | 187.6* | 25.2 | 47.2 | 120.8 | 133.0 | 40.1 | 32.5 |
+| **Low t/s** | 17.7 | 14.7 | 9.6 | 7.0 | 17.0 | 18.7 | 28.2* | 21.8 | 176.4 | 179.8* | 25.2 | 47.1 | 119.9 | 132.4 | 26.2 | 19.8 |
+| **TTFT (ms)** | 317 | 322 | 700 | 870 | 854 | 901 | 316 | 341 | 31 | 28 | 40 | 42 | 62 | 45 | 306 | 352 |
 
 **Key Observations:**
 - AMD GPUs show exceptional performance with Q4_0 quantization (199 t/s)
 - Adreno 830 delivers strong mobile performance (35-48 t/s Q8_0)
+- iPhone 16 achieves competitive mobile performance (32-40 t/s Q8_0)
 - TTFT excellent on desktop GPUs (<50ms), acceptable on mobile (<1s)
 
 ### Qwen3 1.7B
 
-| Metric | Mali (Q4_0) | Mali (Q8_0) | Mali (F16) | Mali (F32) | Adreno (F16) | Adreno (F32) | Adreno (Q4_0) | Adreno (Q8_0) | AMD (Q8_0) | AMD (Q4_0) | AMD (F32) | AMD (F16) | Intel (F16) | Intel (Q8_0) |
-|--------|-------------|-------------|------------|------------|--------------|--------------|---------------|---------------|------------|------------|-----------|-----------|-------------|--------------|
-| **Peak t/s** | 9.9 | 8.3 | 3.1 | OOM | 14.1 | OOM | 35.0 | 24.7 | 176.2 | 158.5 | 92.6 | 135.8 | 63.1 | 91.1 |
-| **Avg t/s** | 9.7 | 7.8 | 2.4 | OOM | 11.9 | OOM | 24.0 | 17.3 | 158.0 | 154.8 | 91.7 | 135.5 | 62.8 | 90.0 |
-| **Low t/s** | 9.6 | 7.5 | 2.3 | OOM | 9.2 | OOM | 15.4 | 11.9 | 147.6 | 150.2 | 90.1 | 135.0 | 62.3 | 88.9 |
-| **TTFT (ms)** | 644 | 795 | 2770 | OOM | 3863 | OOM | 610 | 609 | 44 | 55 | 52 | 38 | 150 | 78 |
+| Metric | Mali (Q4_0) | Mali (Q8_0) | Mali (F16) | Mali (F32) | Adreno (F16) | Adreno (F32) | Adreno (Q4_0) | Adreno (Q8_0) | AMD (Q8_0) | AMD (Q4_0) | AMD (F32) | AMD (F16) | Intel (F16) | Intel (Q8_0) | iPhone 16 (Q4_0) | iPhone 16 (Q8_0) |
+|--------|-------------|-------------|------------|------------|--------------|--------------|---------------|---------------|------------|------------|-----------|-----------|-------------|--------------|------------------|------------------|
+| **Peak t/s** | 9.9 | 8.3 | 3.1 | OOM | 14.1 | OOM | 35.0 | 24.7 | 176.2 | 158.5 | 92.6 | 135.8 | 63.1 | 91.1 | 30.1 | 22.8 |
+| **Avg t/s** | 9.7 | 7.8 | 2.4 | OOM | 11.9 | OOM | 24.0 | 17.3 | 158.0 | 154.8 | 91.7 | 135.5 | 62.8 | 90.0 | 21.0 | 15.2 |
+| **Low t/s** | 9.6 | 7.5 | 2.3 | OOM | 9.2 | OOM | 15.4 | 11.9 | 147.6 | 150.2 | 90.1 | 135.0 | 62.3 | 88.9 | 13.4 | 10.2 |
+| **TTFT (ms)** | 644 | 795 | 2770 | OOM | 3863 | OOM | 610 | 609 | 44 | 55 | 52 | 38 | 150 | 78 | 606 | 619 |
 
 **Key Observations:**
 - Mobile GPUs show clear memory limits with F32 (OOM)
 - Desktop GPUs maintain strong performance (90-176 t/s)
+- iPhone 16 delivers solid mobile inference (15-21 t/s Q8_0)
 - Q8_0 provides best mobile performance/quality trade-off
 
 ### Qwen3 4B
 
-| Metric | Mali (Q4_0) | Mali (Q8_0) | Mali (F16) | Mali (F32) | Adreno (F16) | Adreno (F32) | Adreno (Q4_0) | Adreno (Q8_0) | AMD (Q8_0) | AMD (Q4_0) | AMD (F16) | Intel (F16) | Intel (Q8_0) |
-|--------|-------------|-------------|------------|------------|--------------|--------------|---------------|---------------|------------|------------|-----------|-------------|--------------|
-| **Peak t/s** | 5.5 | 4.5 | OOM | OOM | OOM | OOM | 17.7 | 7.7 | 122.9 | 150.7 | 81.9 | 31.7 | 50.0 |
-| **Avg t/s** | 5.4 | 3.7 | OOM | OOM | OOM | OOM | 15.6 | 6.1 | 122.4 | 147.6 | 81.5 | 31.6 | 49.6 |
-| **Low t/s** | 5.3 | 3.4 | OOM | OOM | OOM | OOM | 13.2 | 5.1 | 121.5 | 144.2 | 81.2 | 31.6 | 49.4 |
-| **TTFT (ms)** | 1583 | 2298 | OOM | OOM | OOM | OOM | 1786 | 4514 | 72 | 67 | 70 | 262 | 163 |
+| Metric | Mali (Q4_0) | Mali (Q8_0) | Mali (F16) | Mali (F32) | Adreno (F16) | Adreno (F32) | Adreno (Q4_0) | Adreno (Q8_0) | AMD (Q8_0) | AMD (Q4_0) | AMD (F16) | Intel (F16) | Intel (Q8_0) | iPhone 16 (Q4_0) | iPhone 16 (Q8_0) |
+|--------|-------------|-------------|------------|------------|--------------|--------------|---------------|---------------|------------|------------|-----------|-------------|--------------|------------------|------------------|
+| **Peak t/s** | 5.5 | 4.5 | OOM | OOM | OOM | OOM | 17.7 | 7.7 | 122.9 | 150.7 | 81.9 | 31.7 | 50.0 | 15.3 | 6.6 |
+| **Avg t/s** | 5.4 | 3.7 | OOM | OOM | OOM | OOM | 15.6 | 6.1 | 122.4 | 147.6 | 81.5 | 31.6 | 49.6 | 12.5 | 5.9 |
+| **Low t/s** | 5.3 | 3.4 | OOM | OOM | OOM | OOM | 13.2 | 5.1 | 121.5 | 144.2 | 81.2 | 31.6 | 49.4 | 12.2 | 5.0 |
+| **TTFT (ms)** | 1583 | 2298 | OOM | OOM | OOM | OOM | 1786 | 4514 | 72 | 67 | 70 | 262 | 163 | 1796 | 4523 |
 
 **Key Observations:**
 - 4B models push mobile GPU memory limits (many OOMs)
 - Only Q4_0 viable on mobile for 4B+ models
+- iPhone 16 handles 4B Q4_0 (12.5 t/s avg), Q8_0 is slow (5.9 t/s)
 - Desktop GPUs handle 4B models comfortably
 
 ### Google Gemma-3 1B IT
 
-| Metric | Mali (Q4_0) | Mali (Q8_0) | Mali (F16) | Mali (F32) | Adreno (F16) | Adreno (F32) | Adreno (Q4_0) | Adreno (Q8_0) | AMD (Q8_0) | AMD (Q4_0) | AMD (F32) | AMD (F16) | Intel (F16) | Intel (Q8_0) |
-|--------|-------------|-------------|------------|------------|--------------|--------------|---------------|---------------|------------|------------|-----------|-----------|-------------|--------------|
-| **Peak t/s** | 15.2 | 12.4 | 7.7 | 5.7 | 25.3 | OOM | 45.9 | 37.1 | 150.2 | 155.8 | 113.0 | 155.2 | 83.9 | 109.7 |
-| **Avg t/s** | 14.6 | 11.7 | 7.3 | 5.3 | 24.8 | OOM | 44.2 | 36.6 | 148.8 | 151.3 | 108.6 | 137.0 | 69.5 | 89.0 |
-| **Low t/s** | 12.7 | 10.9 | 6.8 | 4.9 | 23.9 | OOM | 42.6 | 35.7 | 144.8 | 146.0 | 106.4 | 129.1 | 54.6 | 61.5 |
-| **TTFT (ms)** | 421 | 467 | 1146 | 1412 | 575 | OOM | 318 | 219 | 39 | 38 | 40 | 32 | 131 | 95 |
+| Metric | Mali (Q4_0) | Mali (Q8_0) | Mali (F16) | Mali (F32) | Adreno (F16) | Adreno (F32) | Adreno (Q4_0) | Adreno (Q8_0) | AMD (Q8_0) | AMD (Q4_0) | AMD (F32) | AMD (F16) | Intel (F16) | Intel (Q8_0) | iPhone 16 (Q4_0) | iPhone 16 (Q8_0) |
+|--------|-------------|-------------|------------|------------|--------------|--------------|---------------|---------------|------------|------------|-----------|-----------|-------------|--------------|------------------|------------------|
+| **Peak t/s** | 15.2 | 12.4 | 7.7 | 5.7 | 25.3 | OOM | 45.9 | 37.1 | 150.2 | 155.8 | 113.0 | 155.2 | 83.9 | 109.7 | 42.2 | 35.2 |
+| **Avg t/s** | 14.6 | 11.7 | 7.3 | 5.3 | 24.8 | OOM | 44.2 | 36.6 | 148.8 | 151.3 | 108.6 | 137.0 | 69.5 | 89.0 | 40.2 | 33.2 |
+| **Low t/s** | 12.7 | 10.9 | 6.8 | 4.9 | 23.9 | OOM | 42.6 | 35.7 | 144.8 | 146.0 | 106.4 | 129.1 | 54.6 | 61.5 | 39.3 | 33.2 |
+| **TTFT (ms)** | 421 | 467 | 1146 | 1412 | 575 | OOM | 318 | 219 | 39 | 38 | 40 | 32 | 131 | 95 | 310 | 215 |
 
 **Key Observations:**
 - Gemma shows efficient inference on mobile
 - Adreno performance excellent for 1B model (36-45 t/s)
+- iPhone 16 delivers strong Gemma performance (33-40 t/s Q8_0)
 - Desktop GPUs achieve 100+ t/s consistently
 
 ### Google Gemma-3 4B IT
 
-| Metric | Mali (Q4_0) | Mali (Q8_0) | Mali (F16) | Mali (F32) | Adreno (F16) | Adreno (F32) | Adreno (Q4_0) | Adreno (Q8_0) | AMD (Q8_0) | AMD (Q4_0) | AMD (F16) | Intel (F16) | Intel (Q8_0) |
-|--------|-------------|-------------|------------|------------|--------------|--------------|---------------|---------------|------------|------------|-----------|-------------|--------------|
-| **Peak t/s** | 6.9 | 5.5 | OOM | OOM | OOM | OOM | 19.2 | 13.8 | 112.3 | 25.2 | 28.7 | 32.7 | 51.1 |
-| **Avg t/s** | 6.6 | 5.3 | OOM | OOM | OOM | OOM | 19.0 | 10.3 | 106.8 | 25.0 | 28.7 | 32.5 | 50.8 |
-| **Low t/s** | 5.8 | 4.8 | OOM | OOM | OOM | OOM | 18.6 | 6.7 | 99.4 | 24.9 | 28.6 | 32.3 | 50.3 |
-| **TTFT (ms)** | 1620 | 1911 | OOM | OOM | OOM | OOM | 934 | 1199 | 68 | 97 | 96 | 310 | 162 |
+| Metric | Mali (Q4_0) | Mali (Q8_0) | Mali (F16) | Mali (F32) | Adreno (F16) | Adreno (F32) | Adreno (Q4_0) | Adreno (Q8_0) | AMD (Q8_0) | AMD (Q4_0) | AMD (F16) | Intel (F16) | Intel (Q8_0) | iPhone 16 (Q4_0) | iPhone 16 (Q8_0) |
+|--------|-------------|-------------|------------|------------|--------------|--------------|---------------|---------------|------------|------------|-----------|-------------|--------------|------------------|------------------|
+| **Peak t/s** | 6.9 | 5.5 | OOM | OOM | OOM | OOM | 19.2 | 13.8 | 112.3 | 25.2 | 28.7 | 32.7 | 51.1 | 17.3 | 11.5 |
+| **Avg t/s** | 6.6 | 5.3 | OOM | OOM | OOM | OOM | 19.0 | 10.3 | 106.8 | 25.0 | 28.7 | 32.5 | 50.8 | 15.9 | 9.1 |
+| **Low t/s** | 5.8 | 4.8 | OOM | OOM | OOM | OOM | 18.6 | 6.7 | 99.4 | 24.9 | 28.6 | 32.3 | 50.3 | 16.3 | 5.4 |
+| **TTFT (ms)** | 1620 | 1911 | OOM | OOM | OOM | OOM | 934 | 1199 | 68 | 97 | 96 | 310 | 162 | 952 | 1214 |
 
 **Key Observations:**
 - Mobile GPUs struggle with 4B models
 - Only Q4_0 inference viable on mobile
+- iPhone 16 handles Gemma 4B reasonably well (15.9 t/s Q4_0, 9.1 t/s Q8_0)
 - Desktop GPUs still deliver acceptable performance
 
 ---
@@ -170,6 +175,7 @@ Comparison of fine-tuning output quality (Qwen3 1.7B):
 | **AMD** | 149/176/5 / 0.45 | 151/177/2 / 0.47 |
 | **Nvidia** | 152/174/4 / 0.46 | 150/176/4 / 0.46 |
 | **Apple M3 Pro** | 149/176/5 / 0.45 | 158/170/2 / 0.48 |
+| **iPhone 16** | 151/177/2 / 0.47 | 150/176/4 / 0.46 |
 
 **Average Win Rate**: **45-48%** (near parity with PyTorch at 52-55%)
 
@@ -183,6 +189,7 @@ Comparison of fine-tuning output quality (Qwen3 1.7B):
 | **AMD** | 158/170/2 / 0.48 | 150/178/2 / 0.45 |
 | **Nvidia** | 158/170/2 / 0.48 | 151/176/3 / 0.46 |
 | **Apple M3 Pro** | 158/170/2 / 0.48 | 157/171/2 / 0.47 |
+| **iPhone 16** | 150/178/2 / 0.45 | 151/176/3 / 0.46 |
 
 **Average Win Rate**: **45-48%** (consistent across platforms)
 
@@ -196,6 +203,7 @@ Comparison of fine-tuning output quality (Qwen3 1.7B):
 | **AMD** | 158/170/2 / 0.48 | 157/171/2 / 0.47 |
 | **Nvidia** | 150/178/2 / 0.45 | 157/171/2 / 0.47 |
 | **Apple M3 Pro** | 158/170/2 / 0.48 | 151/177/2 / 0.46 |
+| **iPhone 16** | 157/171/2 / 0.47 | 157/171/2 / 0.47 |
 
 **Average Win Rate**: **45-48%** (Gemma matches Qwen3)
 
@@ -209,6 +217,7 @@ Comparison of fine-tuning output quality (Qwen3 1.7B):
 | **AMD** | 156/171/3 / 0.47 | 151/176/3 / 0.46 |
 | **Nvidia** | 158/170/2 / 0.48 | 158/170/2 / 0.48 |
 | **Apple M3 Pro** | 156/171/3 / 0.47 | 157/171/2 / 0.47 |
+| **iPhone 16** | 151/176/3 / 0.46 | 158/170/2 / 0.48 |
 
 **Average Win Rate**: **46-48%** (larger models maintain quality)
 
@@ -252,6 +261,7 @@ Accuracy scores on biomedical question-answering tasks:
 | AMD | 9.84 | 47.4 |
 | Nvidia | 8 | 116.36 |
 | Apple M3 Pro | 3.121 | 17.53 |
+| iPhone 16 | 5.22 | 4.89 |
 | **Time/Step** | | |
 | Mali | 9m 30s | 1m 40s |
 | Adreno | 19s | 21s |
@@ -259,6 +269,7 @@ Accuracy scores on biomedical question-answering tasks:
 | AMD | 13s | 2.7s |
 | Nvidia | 16s | 1.1s |
 | Apple M3 Pro | 41s | 7.3s |
+| iPhone 16 | 19s | 21s |
 | **Time/Epoch** | | |
 | Mali | 44h 40m | 7h 40m |
 | Adreno | 1h 37m | 1h 40m |
@@ -266,12 +277,14 @@ Accuracy scores on biomedical question-answering tasks:
 | AMD | 1h 15m | 13m 7s |
 | Nvidia | 1h 14m | 5m 32s |
 | Apple M3 Pro | 1h 58m | 40m |
+| iPhone 16 | 1h 47m | 1h 55m |
 
 **Full Training (8 epochs):**
 - **Nvidia RTX 4090**: 44 minutes (fastest)
 - **AMD 7900 XTX**: 1.7 hours
 - **Intel Arc A770**: 2.7 hours
 - **Apple M3 Pro**: 5.3 hours
+- **iPhone 16**: ~15 hours
 - **Adreno 830**: 13.3 hours
 - **Mali G715**: 61 hours (overnight training)
 
@@ -286,6 +299,7 @@ Accuracy scores on biomedical question-answering tasks:
 | AMD | 4.74 | 23.7 |
 | Nvidia | 5.81 | 80 |
 | Apple M3 Pro | 2.06 | 7.61 |
+| iPhone 16 | OOM | OOM |
 | **Time/Step** | | |
 | Mali | 17m 10s | OOM |
 | Adreno | OOM | OOM |
@@ -293,6 +307,7 @@ Accuracy scores on biomedical question-answering tasks:
 | AMD | 27s | 5.4s |
 | Nvidia | 22s | 1.6s |
 | Apple M3 Pro | 1m 2s | 16.8s |
+| iPhone 16 | OOM | OOM |
 | **Time/Epoch** | | |
 | Mali | 80h 15m | OOM |
 | Adreno | OOM | OOM |
@@ -300,13 +315,14 @@ Accuracy scores on biomedical question-answering tasks:
 | AMD | 2h 4s | 26m 31s |
 | Nvidia | 1h 47m | 7m 30s |
 | Apple M3 Pro | 3h 14m | 1h 20m |
+| iPhone 16 | OOM | OOM |
 
 **Full Training (8 epochs):**
 - **Nvidia RTX 4090**: 1 hour (Q8_0)
 - **AMD 7900 XTX**: 3.5 hours
 - **Intel Arc A770**: 6.2 hours
 - **Apple M3 Pro**: 10.7 hours
-- **Mobile**: OOM (4B too large)
+- **Mobile (iPhone 16, Adreno)**: OOM (4B too large)
 
 ### Google Gemma-3 1B IT
 
@@ -319,6 +335,7 @@ Accuracy scores on biomedical question-answering tasks:
 | AMD | 44.13 | 64 |
 | Nvidia | 116.36 | 160 |
 | Apple M3 Pro | 22.8 | 24.15 |
+| iPhone 16 | 1.92 | 2.22 |
 | **Time/Step** | | |
 | Mali | 1m 3s | 1m 4s |
 | Adreno | 1m 10s | 1m 11s |
@@ -326,6 +343,7 @@ Accuracy scores on biomedical question-answering tasks:
 | AMD | 2.9s | 2s |
 | Nvidia | 1.1s | 0.8s |
 | Apple M3 Pro | 5.6s | 5.3s |
+| iPhone 16 | 1m 22s | 1m 25s |
 | **Time/Epoch** | | |
 | Mali | 4h 40m | 4h 45m |
 | Adreno | 5h 10m | 5h 12m |
@@ -333,6 +351,7 @@ Accuracy scores on biomedical question-answering tasks:
 | AMD | 11m 56s | 8m 35s |
 | Nvidia | 10m 50s | 4m 16s |
 | Apple M3 Pro | 25m | 23m |
+| iPhone 16 | 6h 12m | 6h 5m |
 
 **Full Training (8 epochs):**
 - **Nvidia RTX 4090**: 34 minutes
@@ -341,6 +360,7 @@ Accuracy scores on biomedical question-answering tasks:
 - **Apple M3 Pro**: 3.1 hours
 - **Adreno 830**: 41 hours
 - **Mali G715**: 38 hours
+- **iPhone 16**: ~49 hours
 
 ### Google Gemma-3 4B IT
 
@@ -353,6 +373,7 @@ Accuracy scores on biomedical question-answering tasks:
 | AMD | 3.76 | 23.7 |
 | Nvidia | 3.87 | 80 |
 | Apple M3 Pro | 2 | 7.71 |
+| iPhone 16 | OOM | OOM |
 | **Time/Step** | | |
 | Mali | OOM | OOM |
 | Adreno | OOM | OOM |
@@ -360,12 +381,14 @@ Accuracy scores on biomedical question-answering tasks:
 | AMD | 34s | 5.4s |
 | Nvidia | 33s | 1.6s |
 | Apple M3 Pro | 64s | 16.6s |
+| iPhone 16 | OOM | OOM |
 | **Time/Epoch** | | |
 | Mali | OOM | OOM |
 | Adreno | OOM | OOM |
 | Intel | 1h 5m | 40m 50s |
 | AMD | 2h 40m | 23m |
 | Nvidia | 2h 27m | 7m 15s |
+| iPhone 16 | OOM | OOM |
 | Apple M3 Pro | 4h 37m | 1h 12m |
 
 **Full Training (8 epochs):**

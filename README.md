@@ -1,4 +1,4 @@
-# qvac-fabric-llm-finetune
+# qvac-rnd-fabric-llm-finetune
 
 <p align="center">
   <img src="https://img.shields.io/badge/Framework-llama.cpp%2FGGML-blue?style=for-the-badge"/>
@@ -320,11 +320,11 @@ We provide curated, privacy-safe datasets for reproducible fine-tuning research.
 
 ### Inference Speed (tokens/second)
 
-| Model | Mali | Adreno | Intel A770 | AMD 7900XTX | RTX 4090 | Apple M3 |
-|-------|------|--------|------------|-------------|----------|----------|
-| **Qwen3-0.6B Q8** | 15.4 | 35.0 | 133.0 | 178.2 | 199+ | 120+ |
-| **Qwen3-1.7B Q8** | 7.8 | 17.3 | 90.0 | 158.0 | 176+ | 62-90 |
-| **Gemma-1B Q8** | 11.7 | 36.6 | 89.0 | 148.8 | 150+ | 70-90 |
+| Model | Mali | Adreno | Intel A770 | AMD 7900XTX | RTX 4090 | Apple M3 | iPhone 16 |
+|-------|------|--------|------------|-------------|----------|----------|-----------|
+| **Qwen3-0.6B Q8** | 15.4 | 35.0 | 133.0 | 178.2 | 199+ | 120+ | 32.5 |
+| **Qwen3-1.7B Q8** | 7.8 | 17.3 | 90.0 | 158.0 | 176+ | 62-90 | 15.2 |
+| **Gemma-1B Q8** | 11.7 | 36.6 | 89.0 | 148.8 | 150+ | 70-90 | 33.2 |
 
 ### Fine-tuning Speed (Time per Epoch, Qwen3-1.7B Q8)
 
@@ -334,6 +334,7 @@ We provide curated, privacy-safe datasets for reproducible fine-tuning research.
 | **AMD 7900 XTX** | 13 min | 1.7 hrs |
 | **Intel Arc A770** | 20 min | 2.7 hrs |
 | **Apple M3 Pro** | 40 min | 5.3 hrs |
+| **iPhone 16** | 1h 55min | 15 hrs |
 | **Adreno 830** | 1h 40min | 13 hrs |
 | **Mali G715** | 7h 40min | 61 hrs |
 

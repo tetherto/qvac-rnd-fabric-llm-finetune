@@ -83,6 +83,7 @@ All platforms have been tested with:
 | AMD 7900 XTX | 180 | 158 | 10ms |
 | Apple M3 Pro | 90 | 62-90 | 37ms |
 | Intel Arc A770 | 113 | 90 | 78ms |
+| iPhone 16 | 22.8 | 15.2 | 619ms |
 | Adreno 830 | 35 | 17-24 | 609ms |
 | Mali G715 | 8.3 | 7.8 | 795ms |
 
@@ -94,6 +95,7 @@ All platforms have been tested with:
 | AMD 7900 XTX | 47 | 13 min | 1.7 hrs |
 | Apple M3 Pro | 17.5 | 40 min | 5.3 hrs |
 | Intel Arc A770 | 30 | 20 min | 2.7 hrs |
+| iPhone 16 | 4.89 | 1h 55min | ~15 hrs |
 | Adreno 830 | 6 | 1h 40min | 13 hrs |
 | Mali G715 | 1.3 | 7h 40min | 61 hrs |
 
