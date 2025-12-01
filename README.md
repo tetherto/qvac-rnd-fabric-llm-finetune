@@ -1,4 +1,4 @@
-# qvac-fabric
+# qvac-fabric-llm-finetune
 
 <p align="center">
   <img src="https://img.shields.io/badge/Framework-llama.cpp%2FGGML-blue?style=for-the-badge"/>
