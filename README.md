@@ -1,5 +1,3 @@
-# qvac-rnd-fabric-llm-finetune
-
 <p align="center">
   <img src="https://img.shields.io/badge/Framework-llama.cpp%2FGGML-blue?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/LoRA%20Fine--Tuning-Supported-green?style=for-the-badge"/>
