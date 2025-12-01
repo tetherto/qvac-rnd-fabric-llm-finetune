@@ -42,7 +42,7 @@
 
 This repository contains the implementation and artifacts for our paper:
 
-**"An Edge-First Generalized LLM LoRA Fine-Tuning Framework for Heterogeneous GPUs"**
+**["An Edge-First Generalized LLM LoRA Fine-Tuning Framework for Heterogeneous GPUs"](https://huggingface.co/blog/qvac/fabric-llm-finetune)**
 
 ### Key Contributions
 
