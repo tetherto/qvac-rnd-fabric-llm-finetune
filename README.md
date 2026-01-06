@@ -75,7 +75,7 @@ To accelerate development and innovation, **Tether Data** is publicly releasing:
 ### 🗺️ Navigation Guide: Where to Find What
 
 #### 🚀 **Getting Started**
-- **First time?** Start with [Quick Start](#quick-start) section above
+- **First time?** Start with [Quick Start](#-quick-start) section below
 - **Platform-specific setup?** Go to `releases/[your-platform]/README.md`
 - **Download binaries?** Browse `releases/` directory
 
