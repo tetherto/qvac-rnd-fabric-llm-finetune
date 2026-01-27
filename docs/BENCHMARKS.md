@@ -513,13 +513,14 @@ PROMPT="Tell me a joke about cats"
 ### Running Training Benchmarks
 
 ```bash
-# Download dataset
-wget https://raw.githubusercontent.com/akshaypn/qvac-finetune/main/datasets/train.jsonl
+# Download and extract biomedical dataset
+wget https://github.com/tetherto/qvac-rnd-fabric-llm-finetune/raw/main/evaluation/biomedical_qa/biomedical_qa.zip
+unzip biomedical_qa.zip
 
 # Run training benchmark
 time ./bin/llama-finetune-lora \
   -m models/qwen3-1.7b-q8_0.gguf \
-  -f train.jsonl \
+  -f biomedical_qa/train.jsonl \
   --assistant-loss-only \
   -c 128 -b 128 -ub 128 -ngl 999 -fa off \
   --learning-rate 1e-5 --lr-min 1e-8 \

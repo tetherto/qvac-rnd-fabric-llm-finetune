@@ -8,16 +8,16 @@ This directory contains datasets, evaluation scripts, and comprehensive reports 
 
 ### 1. Biomedical Question-Answering
 
-**Location:** `./biomedical_qa/`
+**Location:** `./biomedical_qa/biomedical_qa.zip`
 
 **Purpose:** Domain-specific instruction fine-tuning for medical/scientific knowledge
 
 **Statistics:**
-- **Total**: 10,000 examples
-- **Train**: 8,000 examples
-- **Validation**: 1,000 examples
-- **Test**: 1,000 examples
-- **Classes**: Yes/No/Uncertain (balanced)
+- **Total**: 330 examples
+- **Train**: 264 examples
+- **Validation**: 33 examples
+- **Test**: 33 examples
+- **Classes**: Yes (110), No (110), Uncertain (110) - balanced
 - **Source**: PubMedQA (MIT License)
 
 **Format:**
@@ -224,11 +224,15 @@ Raw numerical results from biomedical experiments.
 ### Run Biomedical Evaluation
 
 ```bash
+# Extract biomedical dataset
+cd evaluation/biomedical_qa
+unzip biomedical_qa.zip
+cd ../..
+
 # Fine-tune on biomedical dataset
-cd /root/qvac-finetune
 ./bin/llama-finetune-lora \
   -m models/qwen3-1.7b-q8_0.gguf \
-  -f evaluation/biomedical_qa/train.jsonl \
+  -f evaluation/biomedical_qa/biomedical_qa/train.jsonl \
   --assistant-loss-only \
   -c 128 -b 128 -ub 128 -ngl 999 -fa off \
   --num-epochs 8 \
@@ -238,7 +242,7 @@ cd /root/qvac-finetune
 python evaluation/scripts/test_biomed_prompts.py \
   --model models/qwen3-1.7b-q8_0.gguf \
   --adapter biomedical_adapter.gguf \
-  --dataset evaluation/biomedical_qa/validation.jsonl
+  --dataset evaluation/biomedical_qa/biomedical_qa/validation.jsonl
 ```
 
 ### Run Email Style Transfer
@@ -351,8 +355,6 @@ We welcome evaluation contributions!
 
 - [Main README](../README.md) - Project overview
 - [Benchmarks](../docs/BENCHMARKS.md) - Performance metrics
-- [Datasets Guide](../datasets/README.md) - Dataset creation
-- [Release Notes](../RELEASE_NOTES.md) - Version history
 
 ---
 

@@ -51,12 +51,13 @@ wget https://huggingface.co/Qwen/Qwen3-1.7B-GGUF/resolve/main/qwen3-1_7b-q8_0.gg
 # Test inference
 ./bin/llama-cli -m models/qwen3-1.7b-q8_0.gguf -ngl 999 -p "Hello, world!"
 
-# Fine-tune
-wget https://raw.githubusercontent.com/akshaypn/qvac-finetune/main/datasets/biomedical_qa.jsonl
+# Download and extract biomedical dataset
+wget https://github.com/tetherto/qvac-rnd-fabric-llm-finetune/raw/main/evaluation/biomedical_qa/biomedical_qa.zip
+unzip biomedical_qa.zip
 
 ./bin/llama-finetune-lora \
   -m models/qwen3-1.7b-q8_0.gguf \
-  -f biomedical_qa.jsonl \
+  -f biomedical_qa/train.jsonl \
   --assistant-loss-only \
   -c 128 -b 128 -ub 128 -ngl 999 -fa off \
   --learning-rate 1e-5 --lr-min 1e-8 \

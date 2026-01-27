@@ -162,9 +162,7 @@ All platforms have been tested with:
 
 ### Advanced Topics
 - [Detailed Benchmarks](../docs/BENCHMARKS.md)
-- [Research Paper](../docs/paper.pdf)
-- [API Reference](../docs/API.md)
-- [Dataset Format](../datasets/README.md)
+- [Evaluation Guide](../evaluation/README.md)
 
 ---
 

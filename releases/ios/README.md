@@ -59,13 +59,14 @@ curl -L https://huggingface.co/Qwen/Qwen3-0.6B-GGUF/resolve/main/qwen3-0_6b-q8_0
 ### Fine-tune
 
 ```bash
-# Download biomedical dataset
-curl -L https://raw.githubusercontent.com/akshaypn/qvac-finetune/main/datasets/biomedical_qa.jsonl -o biomedical_qa.jsonl
+# Download and extract biomedical dataset
+curl -L https://github.com/tetherto/qvac-rnd-fabric-llm-finetune/raw/main/evaluation/biomedical_qa/biomedical_qa.zip -o biomedical_qa.zip
+unzip biomedical_qa.zip
 
 # Run LoRA fine-tuning
 ./bin/llama-finetune-lora \
   -m models/qwen3-0.6b-q8_0.gguf \
-  -f biomedical_qa.jsonl \
+  -f biomedical_qa/train.jsonl \
   --assistant-loss-only \
   -c 128 -b 64 -ub 64 -ngl 99 -fa off \
   --lora-rank 8 --lora-alpha 16 \

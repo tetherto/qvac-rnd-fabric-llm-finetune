@@ -401,7 +401,7 @@ To expand the dataset, you can:
 ## 🔗 Related Resources
 
 - [Main Evaluation Guide](../README.md)
-- [Biomedical Dataset](../biomedical_qa/README.md)
+- [Biomedical Dataset](../biomedical_qa/)
 - [Training Documentation](../../README.md#usage-examples)
 - [Benchmarks](../../docs/BENCHMARKS.md)
 

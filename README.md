@@ -110,13 +110,15 @@ To accelerate development and innovation, **Tether Data** is publicly releasing:
 ```
 qvac-fabric/
 ├── README.md                      # This file - main documentation
-├── RELEASE_NOTES.md               # Version history and changelog
 │
 ├── docs/                          # 📖 Research Documentation
 │   └── BENCHMARKS.md              # Comprehensive performance metrics across all platforms
 │
 ├── evaluation/                    # 🧪 Datasets, Scripts & Results
 │   ├── README.md                  # Evaluation guide and methodology
+│   │
+│   ├── biomedical_qa/             # Biomedical Question-Answering Dataset
+│   │   └── biomedical_qa.zip      # PubMedQA-derived dataset (330 examples)
 │   │
 │   ├── email_style_transfer/      # Personal Email Style Transfer Dataset
 │   │   ├── email_dataset.jsonl    # Email conversation examples
@@ -180,13 +182,14 @@ export LD_LIBRARY_PATH=.
 mkdir -p models
 wget https://huggingface.co/Qwen/Qwen3-0.6B-GGUF/resolve/main/qwen3-0_6b-q8_0.gguf -O models/qwen3-0.6b-q8_0.gguf
 
-# Download dataset
-wget https://raw.githubusercontent.com/tetherto/qvac-fabric/main/datasets/train.jsonl
+# Download and extract biomedical dataset
+wget https://github.com/tetherto/qvac-rnd-fabric-llm-finetune/raw/main/evaluation/biomedical_qa/biomedical_qa.zip
+unzip biomedical_qa.zip
 
 # Quick test with biomedical dataset
 ./bin/llama-finetune-lora \
   -m models/qwen3-0.6b-q8_0.gguf \
-  -f train.jsonl \
+  -f biomedical_qa/train.jsonl \
   --assistant-loss-only \
   -c 128 -b 128 -ub 128 -ngl 99 -fa off \
   --num-epochs 2
@@ -209,15 +212,16 @@ cd qvac-macos-apple-silicon-v1.0
 mkdir -p models
 wget https://huggingface.co/Qwen/Qwen3-1.7B-GGUF/resolve/main/qwen3-1_7b-q8_0.gguf -O models/qwen3-1.7b-q8_0.gguf
 
-# Download dataset
-wget https://raw.githubusercontent.com/tetherto/qvac-fabric/main/datasets/train.jsonl
+# Download and extract biomedical dataset
+wget https://github.com/tetherto/qvac-rnd-fabric-llm-finetune/raw/main/evaluation/biomedical_qa/biomedical_qa.zip
+unzip biomedical_qa.zip
 
-# Quick test with email style transfer
+# Quick test with biomedical dataset
 ./bin/llama-finetune-lora \
   -m models/qwen3-1.7b-q8_0.gguf \
-  -f train.jsonl \
-  -c 512 -b 128 -ub 128 -ngl 999 \
-  --lora-rank 16 --lora-alpha 32 \
+  -f biomedical_qa/train.jsonl \
+  --assistant-loss-only \
+  -c 128 -b 128 -ub 128 -ngl 999 -fa off \
   --num-epochs 3
 ```
 
@@ -240,13 +244,14 @@ cd qvac-linux-vulkan-x64-v1.0
 mkdir -p models
 wget https://huggingface.co/Qwen/Qwen3-1.7B-GGUF/resolve/main/qwen3-1_7b-q8_0.gguf -O models/qwen3-1.7b-q8_0.gguf
 
-# Download dataset
-wget https://raw.githubusercontent.com/tetherto/qvac-fabric/main/datasets/train.jsonl
+# Download and extract biomedical dataset
+wget https://github.com/tetherto/qvac-rnd-fabric-llm-finetune/raw/main/evaluation/biomedical_qa/biomedical_qa.zip
+unzip biomedical_qa.zip
 
 # Run biomedical fine-tuning
 ./bin/llama-finetune-lora \
   -m models/qwen3-1.7b-q8_0.gguf \
-  -f train.jsonl \
+  -f biomedical_qa/train.jsonl \
   --assistant-loss-only \
   -c 128 -b 128 -ub 128 -ngl 999 -fa off \
   --learning-rate 1e-5 --lr-min 1e-8 \

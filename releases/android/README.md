@@ -56,13 +56,14 @@ wget https://huggingface.co/Qwen/Qwen3-0.6B-GGUF/resolve/main/qwen3-0_6b-q8_0.gg
 ### Fine-tune with Biomedical Dataset
 
 ```bash
-# Download biomedical dataset (included in repo)
-wget https://raw.githubusercontent.com/akshaypn/qvac-finetune/main/datasets/biomedical_qa.jsonl
+# Download and extract biomedical dataset
+wget https://github.com/tetherto/qvac-rnd-fabric-llm-finetune/raw/main/evaluation/biomedical_qa/biomedical_qa.zip
+unzip biomedical_qa.zip
 
 # Run LoRA fine-tuning
 ./bin/llama-finetune-lora \
   -m models/qwen3-0.6b-q8_0.gguf \
-  -f biomedical_qa.jsonl \
+  -f biomedical_qa/train.jsonl \
   --assistant-loss-only \
   -c 128 -b 128 -ub 128 -ngl 99 -fa off \
   --num-epochs 2 \
